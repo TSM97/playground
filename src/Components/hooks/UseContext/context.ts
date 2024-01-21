@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { User } from "../../App";
+import { User } from "../../../App";
 
 export const DashboardContext = createContext<User | undefined>(undefined);
 
