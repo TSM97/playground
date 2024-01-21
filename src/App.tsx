@@ -1,8 +1,8 @@
-import UseMemo from "./hooks/UseMemo/UseMemo";
-import Dashboard from "./hooks/UseContext/Dashboard";
-import { DashboardContext } from "./hooks/UseContext/context";
-import UseRef from "./hooks/UseRef/UseRef";
-import UseRefPlaceholder from "./hooks/UseRef/useRefPlaceholder";
+import UseMemo from "./Components/hooks/UseMemo/UseMemo";
+import Dashboard from "./Components/hooks/UseContext/Dashboard";
+import { DashboardContext } from "./Components/hooks/UseContext/context";
+import UseRef from "./Components/hooks/UseRef/UseRef";
+import UseRefPlaceholder from "./Components/hooks/UseRef/UseRefPlaceholder";
 
 export type User = {
   isSubscribed: boolean;
