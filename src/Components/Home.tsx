@@ -12,6 +12,17 @@ export default function Home() {
           <Link to="/Books/2">Book2</Link>
         </div>
       </div>
+      <section id="buttonCheck" className="flex w-1/3 justify-around">
+        <button className="border-2 border-primary hover:bg-primary-100 rounded-lg overflow-hidden transition-all delay-200 ease-in w-[25%] p-1">
+          <div className="bg-warning-300">div1</div>
+          <div className="bg-warning-300">div2</div>
+        </button>
+        <button className="border-2 border-warning hover:bg-warning-100 rounded-lg flex justify-center items-center overflow-hidden transition-all delay-200 ease-in h-full w-[25%]">
+          <div className="bg-primary-300 h-[80%] w-[90%] flex justify-center items-center">
+            <span className="max-h-max">div3</span>
+          </div>
+        </button>
+      </section>
     </>
   );
 }
