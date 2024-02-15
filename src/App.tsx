@@ -1,4 +1,10 @@
 import { Link, Route, Routes } from "react-router-dom";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+} from "@nextui-org/react";
 
 import UseMemo from "./Components/hooks/UseMemo/UseMemo";
 import Dashboard from "./Components/hooks/UseContext/Dashboard";
@@ -7,12 +13,7 @@ import UseRef from "./Components/hooks/UseRef/UseRef";
 import UseRefPlaceholder from "./Components/hooks/UseRef/UseRefPlaceholder";
 import Home from "./Components/Home";
 import Books from "./Components/Books";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-} from "@nextui-org/react";
+import InterviewExc from "./Components/InterviewExc/InterviewExc";
 
 export type User = {
   isSubscribed: boolean;
@@ -26,14 +27,16 @@ function App() {
   };
 
   return (
-    <>
+    <section className="overflow-x-hidden">
       <Navbar>
         <NavbarBrand>
-          <p className="font-bold text-inherit">PlayGround</p>
+          <p className="font-bold text-inherit">
+            <Link to="/">PlayGround</Link>
+          </p>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarItem>
-            <Link to="/">Home</Link>
+            <Link to="/IntervieExc">Interview(exc)</Link>
           </NavbarItem>
           <NavbarItem isActive>
             <Link to="/UseMemo">UseMemo</Link>
@@ -48,6 +51,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/UseMemo" element={<UseMemo />} />
+            <Route path="/IntervieExc" element={<InterviewExc />} />
             <Route
               path="/UseRef"
               element={
@@ -69,7 +73,7 @@ function App() {
           </Routes>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 
