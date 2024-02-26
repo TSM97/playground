@@ -10,7 +10,7 @@ export default function PersonsModal({
   if (!isOpen) return null;
 
   return (
-    <section className="">
+    <section className="absolute top-[50%] bottom-[50%]">
       <div>Modal</div>
       <div>Modal</div>
       <button onClick={closeModal}>button</button>
