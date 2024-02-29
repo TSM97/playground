@@ -24,8 +24,8 @@ export default function DynamicTable({ personsData }) {
   return (
     <>
       {personsData && (
-        <section className="w-1/2 flex justify-center pt-1">
-          <table className="table-fixed w-full">
+        <section className="w-1/2 flex justify-center pt-1 pb-3">
+          <table className="table-fixed h-fit">
             <thead>
               <tr>
                 <th className="border border-slate-600 text-left">Name</th>
@@ -40,18 +40,24 @@ export default function DynamicTable({ personsData }) {
                     <>
                       <tr
                         key={index}
-                        onClick={() => {
-                          openModal();
-                          setData(person);
-                        }}
+                        onClick={
+                          !isOpen
+                            ? () => {
+                                openModal();
+                                setData(person);
+                              }
+                            : undefined
+                        }
                       >
-                        <td className="border border-slate-600">
-                          {person.name.title}
+                        <td className="border border-slate-600 min-w-unit-5xl">
+                          <span>{person?.name?.title} </span>
+                          <span>{person?.name?.first} </span>
+                          <span>{person?.name?.last}</span>
                         </td>
-                        <td className="border border-slate-600">
+                        <td className="border border-slate-600  min-w-unit-4xl">
                           {person.gender}
                         </td>
-                        <td className="border border-slate-600">
+                        <td className="border border-slate-600  min-w-unit-6xl">
                           {person.email}
                         </td>
                       </tr>

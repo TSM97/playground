@@ -46,8 +46,8 @@ function App() {
           </NavbarItem>
         </NavbarContent>
       </Navbar>
-      <div className="flex justify-center w-screen h-screen ">
-        <div className="container flex items-center flex-col gap-[35px]">
+      <div className="flex justify-center w-screen">
+        <div className="container flex items-center flex-col gap-[35px] min-h-[50dvh]">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/UseMemo" element={<UseMemo />} />
