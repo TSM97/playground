@@ -1,3 +1,5 @@
+import { personsDataType } from "../types/persons";
+
 export default function PersonsModal({
   isOpen,
   closeModal,
@@ -5,7 +7,7 @@ export default function PersonsModal({
 }: {
   isOpen: boolean;
   closeModal: () => void;
-  modalData: unknown;
+  modalData: personsDataType;
 }) {
   console.log("sto modal" + isOpen);
   console.log("person sto modal" + modalData);
@@ -19,9 +21,9 @@ export default function PersonsModal({
           <div className="flex flex-col gap-y-3 p-unit-lg">
             <div className="flex justify-between border-b-2 pb-2 border-b-gray-300">
               <div>
-                <span>{modalData.name.title} </span>
-                <span>{modalData.name.first} </span>
-                <span>{modalData.name.last}</span>
+                <span>{modalData.name && modalData.name.title} </span>
+                <span>{modalData.name && modalData.name.first} </span>
+                <span>{modalData.name && modalData.name.last}</span>
               </div>
               <div>{modalData.gender}</div>
             </div>

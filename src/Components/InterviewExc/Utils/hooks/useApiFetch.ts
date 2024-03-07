@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { personsDataType } from "../../types/persons";
 
 export type useApiFetch = {
   error: unknown;
@@ -6,7 +7,11 @@ export type useApiFetch = {
   fetchApi: (URL: string) => void;
 };
 
-export default function useApiFetch(setPersonsData): useApiFetch {
+export default function useApiFetch(
+  setPersonsData: React.Dispatch<
+    React.SetStateAction<personsDataType | undefined>
+  >
+): useApiFetch {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<unknown | null>(null);
 
@@ -15,7 +20,7 @@ export default function useApiFetch(setPersonsData): useApiFetch {
       const response: Response = await fetch(URL);
       if (!response.ok) throw new Error("Error response was not ok");
 
-      const responseData: unknown = await response.json();
+      const responseData = await response.json();
       setPersonsData(responseData);
     } catch (error) {
       setError(error);

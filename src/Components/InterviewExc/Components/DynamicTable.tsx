@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
 import PersonsModal from "./PersonsModal";
-import useModalHandle from "../Utils/useModalHandle";
+import useModalHandle from "../Utils/hooks/useModalHandle";
 
 export default function DynamicTable({ personsData }) {
   const [filteredData, setFilteredData] = useState<unknown>([]);
   const { isOpen, modalData, openModal, closeModal, setData } =
     useModalHandle();
+
   useEffect(() => {
     if (personsData) {
       setFilteredData(
@@ -20,11 +21,12 @@ export default function DynamicTable({ personsData }) {
       );
     }
   }, [personsData]);
+
   console.log(filteredData);
   return (
     <>
       {personsData && (
-        <section className="w-1/2 flex justify-center pt-1 pb-3">
+        <section className="flex justify-center pt-1 pb-3">
           <table className="table-fixed h-fit">
             <thead>
               <tr>
@@ -39,7 +41,7 @@ export default function DynamicTable({ personsData }) {
                   return (
                     <>
                       <tr
-                        key={index}
+                        key={index + person.name.first}
                         onClick={
                           !isOpen
                             ? () => {
@@ -49,15 +51,15 @@ export default function DynamicTable({ personsData }) {
                             : undefined
                         }
                       >
-                        <td className="border border-slate-600 min-w-unit-5xl">
+                        <td className="border border-slate-600 md:min-w-unit-5xl">
                           <span>{person?.name?.title} </span>
                           <span>{person?.name?.first} </span>
                           <span>{person?.name?.last}</span>
                         </td>
-                        <td className="border border-slate-600  min-w-unit-4xl">
+                        <td className="border border-slate-600  md:min-w-unit-4xl">
                           {person.gender}
                         </td>
-                        <td className="border border-slate-600  min-w-unit-6xl">
+                        <td className="border border-slate-600  md:min-w-unit-6xl">
                           {person.email}
                         </td>
                       </tr>

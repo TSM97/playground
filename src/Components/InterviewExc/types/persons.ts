@@ -1,16 +1,16 @@
 export type personsDataType = {
-  gender: string;
-  name: Name;
-  location: location;
-  email: string;
-  login: Login;
-  dob: Dob;
-  registered: Dob;
-  phone: string;
-  cell: string;
-  id: Id;
-  picture: Picture;
-  nat: string;
+  gender?: string;
+  name?: name;
+  location?: location;
+  email?: string;
+  login?: Login;
+  dob?: Dob;
+  registered?: Dob;
+  phone?: string;
+  cell?: string;
+  id?: Id;
+  picture?: Picture;
+  nat?: string;
 };
 
 type Picture = {
@@ -64,7 +64,7 @@ type Street = {
   name: string;
 };
 
-type Name = {
+type name = {
   title: string;
   first: string;
   last: string;

@@ -1,5 +1,5 @@
-import useApiFetch from "../Utils/useApiFetch";
-import useHandleButton, { HandleButton } from "../Utils/useHandleButton";
+import useApiFetch from "../Utils/hooks/useApiFetch";
+import useHandleButton, { HandleButton } from "../Utils/hooks/useHandleButton";
 
 // import { data } from "../types/persons";
 
@@ -10,7 +10,7 @@ export default function PeoplePanel({ setPersonsData }) {
   console.log(setPersonsData);
 
   return (
-    <section className="flex flex-col gap-y-3">
+    <section className="flex flex-col gap-y-3 h-[20dvh]">
       <div className="text-center text-xl">React Test</div>
       <div className="grid-cols-3 grid gap-3">
         <div className="flex w-100 justify-center">

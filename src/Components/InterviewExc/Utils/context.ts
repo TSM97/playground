@@ -1,16 +1,18 @@
-import { createContext, useContext } from "react";
-import { personsDataType } from "../types/persons";
+// import { createContext, useContext } from "react";
+// import { personsDataType } from "../types/persons";
 
-export const PersonsContext = createContext<personsDataType | undefined>(
-  undefined
-);
+// export const PersonsContext = createContext<personsDataType | undefined>(
+//   undefined
+// );
 
-export function useUserContext() {
-  const persons = useContext(PersonsContext);
+// export function useUserContext() {
+//   const persons = useContext(PersonsContext);
 
-  if (persons === undefined) {
-    throw new Error("useUserContext must be used with a PersonsContext");
-  }
+//   if (persons === undefined) {
+//     throw new Error("useUserContext must be used with a PersonsContext");
+//   }
 
-  return persons;
-}
+//   return persons;
+// }
+
+// ! useContext for Persons between PeoplePanel and DynamicTable component, Not in use- Passing setPersons to PeoplePanel and persons to DynamicTable
