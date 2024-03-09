@@ -7,8 +7,6 @@ export default function PeoplePanel({ setPersonsData }) {
   const { persons, increment, decrement }: HandleButton = useHandleButton();
   const { isLoading, error, fetchApi } = useApiFetch(setPersonsData);
 
-  console.log(setPersonsData);
-
   return (
     <section className="flex flex-col gap-y-3 h-[20dvh]">
       <div className="text-center text-xl">React Test</div>

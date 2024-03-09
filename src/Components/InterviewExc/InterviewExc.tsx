@@ -5,9 +5,8 @@ import { useState } from "react";
 import { personsDataType } from "./types/persons";
 
 export default function InterviewExc() {
-  const [personsData, setPersonsData] = useState<personsDataType | undefined>(
-    undefined
-  );
+  const [personsData, setPersonsData] = useState<personsDataType | undefined>();
+
   return (
     <>
       <PeoplePanel setPersonsData={setPersonsData} />

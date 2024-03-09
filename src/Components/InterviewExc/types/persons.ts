@@ -25,8 +25,8 @@ type Id = {
 };
 
 type Dob = {
-  date: string;
-  age: number;
+  date?: string;
+  age?: number;
 };
 
 type Login = {

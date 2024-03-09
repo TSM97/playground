@@ -21,6 +21,7 @@ export default function useApiFetch(
       if (!response.ok) throw new Error("Error response was not ok");
 
       const responseData = await response.json();
+      console.log(responseData);
       setPersonsData(responseData);
     } catch (error) {
       setError(error);
